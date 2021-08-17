@@ -48,8 +48,8 @@ async def SaveBatchMediaInChannel(bot: Client, editable: Message, message_ids: l
         )
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(str(SaveMessage.message_id))}"
         await editable.edit(
-            f"**Video Link:\n\n {share_link}**\n\n"
-            f"Just Click the link to get your Videos",
+            f"**Video Link:\n\n{share_link}**\n\n"
+            f"**Just Click the link to get your Videos**",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Open Link", url=share_link)],
@@ -88,7 +88,7 @@ async def SaveMediaInChannel(bot: Client, editable: Message, message: Message):
             parse_mode="Markdown", disable_web_page_preview=True)
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
         await editable.edit(
-            f"**Video Link:\n\n {share_link}**\n\n"
+            f"**Video Link:\n\n{share_link}**\n\n"
             f"Just Click the link to get your Videos",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
