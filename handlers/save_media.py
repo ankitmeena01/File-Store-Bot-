@@ -89,7 +89,7 @@ async def SaveMediaInChannel(bot: Client, editable: Message, message: Message):
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
         await editable.edit(
             f"**Video Link:\n\n{share_link}**\n\n"
-            f"Just Click the link to get your Videos",
+            f"**Just Click the link to get your Videos**",
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Open Link", url=share_link)],
