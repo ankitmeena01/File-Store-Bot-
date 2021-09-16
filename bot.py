@@ -92,6 +92,55 @@ async def main(bot: Client, message: Message):
                                      disable_web_page_preview=True)
             return
 
+        if Config.OTHER_USERS_CAN_SAVE_FILE is False:
+            return
+        await message.reply_text(
+            text="**Choose an option from below:**",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Save in Batch", callback_data="addToBatchTrue")]]),
+            quote=True,
+            disable_web_page_preview=True
+        )
+    elif message.chat.type == "channel":
+        if (message.chat.id == int(Config.LOG_CHANNEL)) or (message.chat.id == int(Config.UPDATES_CHANNEL)) or message.forward_from_chat or message.forward_from:
+            return
+        elif int(message.chat.id) in Config.BANNED_CHAT_IDS:
+            await bot.leave_chat(message.chat.id)
+            return
+        else:
+            pass
+
+        try:
+            forwarded_msg = await message.forward(Config.DB_CHANNEL)
+            file_er_id = str(forwarded_msg.message_id)
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
+            CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.message_id,
+                                                          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
+                                                              "Get Sharable Link", url=share_link)]]))
+            if message.chat.username:
+                await forwarded_msg.reply_text(
+                    f"#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/{message.chat.username}/{CH_edit.message_id}) Channel's Broadcasted File's Button Added!")
+            else:
+                private_ch = str(message.chat.id)[4:]
+                await forwarded_msg.reply_text(
+                    f"#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/c/{private_ch}/{CH_edit.message_id}) Channel's Broadcasted File's Button Added!")
+        except FloodWait as sl:
+            await asyncio.sleep(sl.x)
+            await bot.send_message(
+                chat_id=int(Config.LOG_CHANNEL),
+                text=f"#FloodWait:\nGot FloodWait of `{str(sl.x)}s` from `{str(message.chat.id)}` !!",
+                parse_mode="Markdown",
+                disable_web_page_preview=True
+            )
+        except Exception as err:
+            await bot.leave_chat(message.chat.id)
+            await bot.send_message(
+                chat_id=int(Config.LOG_CHANNEL),
+                text=f"#ERROR_TRACEBACK:\nGot Error from `{str(message.chat.id)}` !!\n\n**Traceback:** `{err}`",
+                parse_mode="Markdown",
+                disable_web_page_preview=True
+            )
+
 
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
 async def broadcast_handler_open(_, m: Message):
@@ -347,7 +396,7 @@ async def button(bot: Client, cmd: CallbackQuery):
         except Exception as e:
             await cmd.answer(f"Can't Ban Him!\n\nError: {e}", show_alert=True)
 
-    #elif "addToBatchTrue" in cb_data:
+    elif "addToBatchTrue" in cb_data:
         if MediaList.get(f"{str(cmd.from_user.id)}", None) is None:
             MediaList[f"{str(cmd.from_user.id)}"] = []
         file_id = cmd.message.reply_to_message.message_id
