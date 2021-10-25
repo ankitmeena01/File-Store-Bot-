@@ -22,31 +22,27 @@ class Config(object):
 This is Permanent Files Store Bot!
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [Files Store Bot](https://t.me/{BOT_USERNAME})
+**My Name:** [Thani Oruvan25's Files Store Bot](https://t.me/{BOT_USERNAME})
 
-📝 **Language:** [Python3](https://www.python.org)
+**Version** - 1.0
 
-📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
+**Developer:** @ThaniOruvan25 
 
-📡 **Hosted on:** [Heroku](https://heroku.com)
+👥 **Support Group:** [𝑇𝑎𝑚𝑖𝑙 𝑆𝑒𝑟𝑖𝑎𝑙𝑠 𝐷𝑖𝑠𝑐𝑢𝑠𝑠𝑖𝑜𝑛𝑠](https://t.me/Tamil_Seriala)
 
-🧑🏻‍💻 **Developer:** @AbirHasan2005
-
-👥 **Support Group:** [Linux Repositories](https://t.me/JAsuran123)
-
-📢 **Updates Channel:** [Discovery Projects](https://t.me/JAsuran123)
+📢 **Updates Channel:** [𝑻𝒈 𝑻𝒂𝒎𝒊𝒍 𝑺𝒆𝒓𝒊𝒂𝒍𝒔](https://t.me/TGTamilSerials)
 """
 	ABOUT_DEV_TEXT = f"""
-🧑🏻‍💻 **Developer:** @AbirHasan2005
+🧑🏻‍💻 **Developer:** @ThaniOruvan25
+ 
+One Of Fast Video Uploader Admin😇. His First Open Bot Is This [Thani Oruvan25's Files Store Bot](https://t.me/{BOT_USERNAME}). 
 
-Developer is Super Noob. Just Learning from Official Docs. Please Donate the developer for Keeping the Service Alive.
+Join @TamilSeriala For Serial Videos,🥰
 
-Also remember that developer will Delete Adult Contents from Database. So better don't Store Those Kind of Things.
-
-[Donate Now](https://t.me/JAsruan123) (PayPal)
+Join @TrueOTTPlatform2 For Movies 🤩
 """
 	HOME_TEXT = """
-Hi, [{}](tg://user?id={})\n\nThis is Permanent **File Store Bot**.
+Hello, [{}](tg://user?id={})\n\nThis is [Thani Oruvan25's Files Store Bot](https://t.me/{BOT_USERNAME})
 
-Send me any file I will give you a permanent Sharable Link. I Support Channel Also! Check **About Bot** Button.
+Here All '#TO UPLOADS💛' Video Link Will Be Send By Me. Thanks For Using Me. 💗💗
 """
