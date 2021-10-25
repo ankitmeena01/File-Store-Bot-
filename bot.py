@@ -47,8 +47,8 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JAsuran123"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/JAsuran123")
+                        InlineKeyboardButton("Support Group", url="https://t.me/Tamil_Seriala"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/TGTamilSerials")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -113,7 +113,7 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.message_id)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ThaniOruvan25 _{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.message_id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
@@ -334,7 +334,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(int(Config.UPDATES_CHANNEL), cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/JAsuran123).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Tamil_Seriala).",
                         parse_mode="markdown",
                         disable_web_page_preview=True
                     )
@@ -359,7 +359,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/JAsuran123).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/Tamil_Seriala).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -371,8 +371,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JAsuran123"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
+                        InlineKeyboardButton("Support Group", url="https://t.me/Tamil_Seriala"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/TGTamilSerials")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
