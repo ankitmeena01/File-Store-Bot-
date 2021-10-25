@@ -279,8 +279,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://github.com/JAsuran/File-Store-Abir")
+                        InlineKeyboardButton("Updates Channel",
+                                             url="https://t.me/TGTamilSerials")
                     ],
                     [
                         InlineKeyboardButton("Go Home", callback_data="gotohome"),
@@ -298,8 +298,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://github.com/JAsuran/File-Store-Abir")
+                        InlineKeyboardButton("Updates Channel",
+                                             url="https://t.me/TGTamilSerials")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -317,8 +317,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JAsuran123"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/JAsuran123")
+                        InlineKeyboardButton("Support Group", url="https://t.me/Tamil_Seriala"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/TGTamilSerials ")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
